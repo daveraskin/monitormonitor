@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Playlist } from '../playlist';
+import { SpotifySearchService } from '../spotify-search.service';
 
 @Component({
   selector: 'app-search-results',
@@ -9,10 +10,18 @@ import { Playlist } from '../playlist';
 export class SearchResultsComponent implements OnInit {
 
   @Input() playlist: Playlist;
+
+  searchResults: any;
   
-  constructor() { }
+  populateSearchResults(): void {
+  	console.log('something happing')
+  	this.spotifySearchService.getSearchResults()
+  		.subscribe(results => this.searchResults = results)
+  }
+  constructor(private spotifySearchService: SpotifySearchService) { }
 
   ngOnInit() {
+  	this.populateSearchResults();
   }
 
 }
