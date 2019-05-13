@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   searchResults: any;
 
   search(searchTermValue: string): void {
-    this.spotifySearchService.getPlaylists(searchTermValue);
+    this.spotifySearchService.searchSpotify(searchTermValue, 'playlist')
   }
 
   constructor(private spotifySearchService: SpotifySearchService) { }

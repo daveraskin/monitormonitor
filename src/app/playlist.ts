@@ -1,6 +1,6 @@
-export class Playlist {
-	id: number;
-	name: string;
+import { SpotifyResponse } from './spotify-response'
+
+export class Playlist extends SpotifyResponse {
 	url: string;
 	tracks: string[];
 }

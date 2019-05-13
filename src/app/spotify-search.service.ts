@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Playlist } from './playlist';
+import { SpotifyResponse } from './spotify-response';
 import { PLAYLISTS } from './playlists';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifySearchService {
 
-  // create search results class that is a parent of all the other ones
-  searchResults: any[]; 
+  searchResults = new BehaviorSubject([]); 
 
-  getSearchResults<T>():  Observable<T[]> {
-  	return of(this.searchResults);
-  };
+  getResults(): Observable<SpotifyResponse[]> {
+    return this.searchResults.asObservable();
+  }
 
-  getPlaylists(searchTermValue: string): void {
+  searchSpotify(searchTermValue: string, queryType: string): void{
   	if (searchTermValue) {
-  		this.searchResults = PLAYLISTS;
+      console.log('yo wassup')
+  		this.searchResults.next(PLAYLISTS);
+  	} else {
+  		this.searchResults.next(null);
   	}
   }
 

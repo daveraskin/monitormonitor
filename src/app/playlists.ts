@@ -1,4 +1,4 @@
-import {Playlist} from './playlist';
+import { Playlist } from './playlist';
 
 export const PLAYLISTS: Playlist[] = [
 	{ id: 1, name: 'Impulso Creativo', url: 'https://google.com/impulso', tracks: ['Memorand', 'Cattails', 'Data Points']},
