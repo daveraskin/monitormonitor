@@ -1,0 +1,9 @@
+<div class="search-form">
+	<input autofocus="autofocus" [(ngModel)]="searchTerm" placeholder="Start searching">
+	<button (click)="search(searchTerm, searchType)">Search</button>
+</div>
+<div id="search-types">
+		<span><input type="checkbox" value="track">Track</span>
+		<span><input type="checkbox" value="artist">Artist</span>
+		<span><input type="checkbox" value="album">Album</span>
+</div>

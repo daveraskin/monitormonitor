@@ -1,0 +1,7 @@
+<h1> search results </h1>
+<ul *ngIf="searchResults">
+	<li *ngFor="let result of searchResults">
+		<span> {{result.id}}</span>: {{result.name}}
+	</li>
+</ul>
+
