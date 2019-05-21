@@ -1,0 +1,25 @@
+{
+  "collaborative":false,
+  "external_urls": {"spotify":"https://open.spotify.com/playlist/37i9dQZF1DX70RN3TfWWJh"},
+  "href":"https://api.spotify.com/v1/playlists/37i9dQZF1DX70RN3TfWWJh",
+  "id":"37i9dQZF1DX70RN3TfWWJh",
+  "images":[{"height":null,"url":"https://pl.scdn.co/images/pl/default/7c779d6445bc7713063f4f32fca70549ae0eb1f0","width":null}],
+  "name":"Workout",
+  "owner": {
+              "display_name":"Spotify",
+              "external_urls":{"spotify":"https://open.spotify.com/user/spotify"},
+              "href":"https://api.spotify.com/v1/users/spotify",
+              "id":"spotify",
+              "type":"user",
+              "uri":"spotify:user:spotify"
+            },
+  "primary_color":null,
+  "public":null,
+  "snapshot_id":"MTU1ODQ2MTE4OCwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+  "tracks": {
+              "href":"https://api.spotify.com/v1/playlists/37i9dQZF1DX70RN3TfWWJh/tracks",
+              "total":60
+            },
+  "type":"playlist",
+  "uri":"spotify:playlist:37i9dQZF1DX70RN3TfWWJh"
+}

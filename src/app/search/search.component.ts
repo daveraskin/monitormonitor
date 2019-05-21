@@ -12,11 +12,10 @@ export class SearchComponent implements OnInit {
 
   searchTerm: string; 
   searchTypes: string[] = ['playlist', 'artist', 'song', 'album'];
-  searchType: string;
+  searchType: string = 'playlist';
 
 
   search(searchTermValue: string, searchType: string): void {
-    console.log(searchType)
     this.spotifySearchService.searchSpotify(searchTermValue, searchType)
   }
 

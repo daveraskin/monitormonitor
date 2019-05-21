@@ -17,7 +17,12 @@ export class SearchResultsComponent implements OnInit {
   
   populateSearchResults(): void {
   	this.spotifySearchService.getResults()
-  		.subscribe(results => this.searchResults = results)
+  		.subscribe((results) => {
+        for(var result of results) {
+          console.log(JSON.stringify(result))
+        };
+        this.searchResults = results
+    })
   }
   
   constructor(private spotifySearchService: SpotifySearchService) { }

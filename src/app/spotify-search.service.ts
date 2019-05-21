@@ -3,6 +3,7 @@ import { Playlist } from './playlist';
 import { SpotifyResponse } from './spotify-response';
 import { PLAYLISTS } from './playlists';
 import { Observable, of, BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -18,17 +19,18 @@ export class SpotifySearchService {
 
   searchSpotify(searchTermValue: string, queryType: string): void{
     if (queryType == 'playlist') {
-      this.searchResults.next(PLAYLISTS);
-    } else {
-      this.searchResults.next(this.Otherthing);
-    }
+      console.log(searchTermValue)
+      this.http.post<SpotifyResponse[]>('http://localhost:3000/api/search', {term: searchTermValue})
+      .subscribe(results => {
+        console.log(results)
+        this.searchResults.next(results);
+      })
+  }
+}
+
+  getResults(): BehaviorSubject<SpotifyResponse[]> {
+        return this.searchResults
   }
 
-  getResults(): Observable<SpotifyResponse[]> {
-    return this.searchResults.asObservable();
-  }
-
-  
-
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }

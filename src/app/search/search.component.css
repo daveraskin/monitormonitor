@@ -6,11 +6,16 @@
 }
 
 ::placeholder{
-	color: rgb(51,51,51);
+	color: rgb(47,213,102);
 	font-weight: 100;
 }
 
+input:focus ::placeholder{
+	color: rgb(51,51,51);
+}
+
 .search-form input {
+	caret-color: rgb(47,213,102);
 	width: 75%;
 	font-size: 66px;
 	outline: none;
